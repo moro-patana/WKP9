@@ -1,19 +1,28 @@
+// Grab the url where we fetch the data
 const baseEndpoint = 'https://ghibliapi.herokuapp.com/films';
+
+// Grab the element which we want to put the html
 const moviesEl = document.querySelector(`.movies`);
+
+// Use async function to wait for the response
 async function fetchFilms(movie) {
     const response = await fetch(`${baseEndpoint}`);
+
+// Turn the object into string
     const data = await response.json();
+// Sort the data from the high score to the lower
     data.sort(function(a, b) {
         return b.rt_score - a.rt_score;
     })
     return data;
 }
-const handleSubmit = async movie => {
+const handleMovies = async movie => {
     const movies = await fetchFilms(movie);
     console.log(movies);
     displayFilms(movies);
 }
 function displayFilms(movies) {
+    // Map through the movies tocreate an html
     const html = movies.map(movie => {
         return `
            <div class="movie">
@@ -35,4 +44,4 @@ function displayFilms(movies) {
     moviesEl.innerHTML = html.join('');
 };
 
-handleSubmit();
+handleMovies();
