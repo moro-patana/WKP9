@@ -17,3 +17,15 @@ There is a lot of data in a film object, use whatever attribute you need.
 Feel free to add some beautiful styling to your website when you're done fetching and sorting the data.
 
 Good luck 💻
+
+
+# Steps
+ 1. I crab the path where we fetch the data.
+
+ 2. Created a fetch function and sorted the data from the high score to the lower.(I used async await with that function).
+
+ 3. Displayed the movie and created an html. I set it as the div has class movies innnerHTML and joined them.
+
+ **NB**: I was stuggling with the fetch data at first, but I could solve it.
+
+ *Thank you for the project*
